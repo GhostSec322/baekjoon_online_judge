@@ -6,7 +6,6 @@ def solution(today,terms, privacies):
     
     # 오늘 날짜를 연, 월, 일로 분리
     today_year, today_month, today_day = map(int, today_str.split('.'))
-    
     # 약관별 유효기간 딕셔너리 생성
     term_dict = {}
     for term in terms:
@@ -21,6 +20,7 @@ def solution(today,terms, privacies):
         # 유효기간 계산
         expiration_year = info_year
         expiration_month = info_month + term_dict[term_name]
+        print(expiration_month)
         if expiration_month > 12:
             expiration_year += 1
             expiration_month -= 12
